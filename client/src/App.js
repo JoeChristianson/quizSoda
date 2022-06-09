@@ -13,7 +13,10 @@ import Register from "./pages/Register";
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import StudentQuiz from "./pages/StudentQuiz"
-
+import WriteQuiz from "./WriteQuiz";
+import PastWritten from "./pages/PastWritten";
+import PastTaken from "./pages/PastTaken";
+import Pending from "./pages/Pending";
 
 const httpLink = createHttpLink({
   uri: '/graphql'
@@ -67,6 +70,22 @@ return (
             path="/studentQuiz"
             element={<StudentQuiz/>}
             
+            />
+            <Route
+            path="/writeQuiz"
+            element={<WriteQuiz/>}            
+            />
+                        <Route
+            path="/pastWritten"
+            element={<PastWritten/>}            
+            />
+                        <Route
+            path="/pastTaken"
+            element={<PastTaken/>}            
+            />
+                        <Route
+            path="/pending"
+            element={<Pending/>}            
             />
             <Route 
               path="/*" 

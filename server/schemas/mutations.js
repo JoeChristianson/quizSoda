@@ -31,6 +31,16 @@ const mutations = {
         user.save()
         return quiz
       },
+      inviteToQuiz: async (parent,{email,quizId})=>{
+        const user = await User.findOne({email})
+        console.log(user)
+        user.quizInvites.push(quizId)
+        await user.save()
+        const quiz = await Quiz.findById(quizId);
+        quiz.takersEmail.push(email)
+        quiz.save()
+        return "made it"
+      },
       takeQuiz : async (parent,{userId,quizId,answers,date})=>{
         const attempt = {taker:userId,answers,date};
         const quiz = await Quiz.findById(quizId);

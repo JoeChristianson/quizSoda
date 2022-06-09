@@ -30,6 +30,11 @@ const queries = {
             seconds:quiz.seconds
         }
         return studentQuiz
+    },
+    getQuizInvites: async (parent,{userId})=>{
+        const user = await User.findById(userId)
+        const quizzes = await Quiz.find({_id:[...user.quizInvites]}).populate("creator")
+        return quizzes
     }
 }
 

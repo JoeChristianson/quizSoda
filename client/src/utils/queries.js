@@ -14,3 +14,17 @@ query GetStudentQuiz($getStudentQuizId: ID!) {
     }
   }
 `
+
+export const GET_PENDING = gql`
+query Query($userId: ID!) {
+  getQuizInvites(userId: $userId) {
+    _id
+    name
+    creator {
+      name
+    }
+    dueDate
+    seconds
+  }
+}
+`

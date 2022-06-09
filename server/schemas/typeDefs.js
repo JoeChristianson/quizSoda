@@ -66,6 +66,7 @@ type User {
     allUsers:[User]
     getTeacherQuiz(id: ID!):Quiz
     getStudentQuiz(id: ID!): StudentQuiz
+    getQuizInvites(userId: ID!):[Quiz]
   }
 
   type Mutation {
@@ -73,6 +74,7 @@ type User {
       login(email:String!,password:String):Auth
       newQuiz(creator:ID!,name:String!,questions:[QuestionInput],dueDate:String,seconds:Int!):Quiz
       takeQuiz(userId: ID!, quizId: ID!, answers:[String],date:String):Quiz
+      inviteToQuiz(email: String,quizId: ID!):String
     }
 
 `
