@@ -22,3 +22,14 @@ mutation Login($email: String!, $password: String!) {
   }
 }
 `;
+
+export const TAKE_QUIZ = gql`
+mutation Mutation($userId: ID!, $quizId: ID!, $answers: [String], $date: String) {
+  takeQuiz(userId: $userId, quizId: $quizId, answers: $answers, date: $date) {
+    _id
+    name
+    dueDate
+    seconds
+  }
+}
+`

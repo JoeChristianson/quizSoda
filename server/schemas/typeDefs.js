@@ -15,6 +15,9 @@ type User {
     _id: ID!
     name: String!
     email: String!
+    quizzesMade: [Quiz]
+    quizzesTaken: [Quiz]
+    quizInvites: [Quiz]
   }
 
   type Auth {
@@ -34,6 +37,7 @@ type User {
   }
 
   type StudentQuiz {
+    quiz: ID!
     name: String!
     creator: User
     questions: [StudentQuestions]
@@ -68,6 +72,7 @@ type User {
       register(name: String!, email: String!, password: String!):User
       login(email:String!,password:String):Auth
       newQuiz(creator:ID!,name:String!,questions:[QuestionInput],dueDate:String,seconds:Int!):Quiz
+      takeQuiz(userId: ID!, quizId: ID!, answers:[String],date:String):Quiz
     }
 
 `

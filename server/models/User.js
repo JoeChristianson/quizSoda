@@ -26,6 +26,10 @@ const UserSchema = new Schema({
   quizzesTaken:[{
     type:Schema.Types.ObjectId,
     ref:"Quiz"
+  }],
+  quizInvites:[{
+    type:Schema.Types.ObjectId,
+    ref:"Quiz"
   }]
 });
 

@@ -12,6 +12,7 @@ import auth from "./utils/auth";
 import Register from "./pages/Register";
 import Home from "./pages/Home"
 import Login from "./pages/Login"
+import StudentQuiz from "./pages/StudentQuiz"
 
 
 const httpLink = createHttpLink({
@@ -61,6 +62,11 @@ return (
             <Route
               path='/register'
               element={<Register />}
+            />
+            <Route
+            path="/studentQuiz"
+            element={<StudentQuiz/>}
+            
             />
             <Route 
               path="/*" 

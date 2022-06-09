@@ -26,6 +26,16 @@ const mutations = {
       },
       newQuiz : async (parent,{creator,name,questions,dueDate,seconds})=>{
         const quiz = await Quiz.create({name,creator,attempts:[],questions,dueDate,takersEmail:[],seconds})
+        const user = await User.findById(creator);
+        user.quizzesMade.push(quiz._id);
+        user.save()
+        return quiz
+      },
+      takeQuiz : async (parent,{userId,quizId,answers,date})=>{
+        const attempt = {taker:userId,answers,date};
+        const quiz = await Quiz.findById(quizId);
+        quiz.attempts.push(attempt);
+        quiz.save()
         return quiz
       }
 }
