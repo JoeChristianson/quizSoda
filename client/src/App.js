@@ -13,7 +13,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import StudentQuiz from "./pages/StudentQuiz"
-import WriteQuiz from "./WriteQuiz";
+import WriteQuiz from "./pages/WriteQuiz";
 import PastWritten from "./pages/PastWritten";
 import PastTaken from "./pages/PastTaken";
 import Pending from "./pages/Pending";

@@ -18,7 +18,7 @@ const Pending = ()=>{
         <>
         <h1>Pending</h1>
         {quizzes.map((q,i)=>{
-            return (<Link className="dashboard-button" to={"/studentQuiz/?"+q._id}>
+            return  (<Link className="dashboard-button" to={"/studentQuiz/?"+q._id}>
                 {q.name}
         </Link>)
         })}

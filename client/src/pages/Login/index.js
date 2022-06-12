@@ -91,7 +91,7 @@ const Login = (props) => {
                 </button>
 
                 <p className="redirectSignup">
-                <Link className='link-text-ls' to="/signup">
+                <Link className='link-text-ls' to="/register">
                   Create an Account
                 </Link>
                 </p>
